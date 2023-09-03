@@ -8,7 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    /* border: solid white 2px; */
+    /* border: solid rgb(212, 212, 212) 2px; */
 }
 
 /* navigation bar styling */
@@ -36,7 +36,6 @@
 
 .navbar .logo a, .navbar .logo span{
     font-size: 40px;
-    /* color: #DAA520; */
     color: #1daec8;
     font-family: "Ubuntu";
     transition: color 0.3s ease;
@@ -79,7 +78,7 @@
     font-weight: 600;
 }
 .home .max-width{
-    margin: auto 0 auto 40px;
+    margin: auto 0 auto 0;
 }
 .home .max-width .home-content{
     text-align: center;
@@ -122,7 +121,6 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 550px;
     font-size: 4rem;
     overflow: hidden;
     padding-left: 0px;
@@ -146,7 +144,6 @@
 }
 /* Developer */
 .home .max-width .home-content .text-3 span{
-    font-size: 4rem;
     transition: color 0.3s ease;
     cursor: pointer;
 
@@ -174,7 +171,7 @@
     color: #1daec8;
     font-weight: 500;
     transition: color 0.3s ease, background-color 0.3s ease;
-    border: solid #e5caaa 4px;
+    /* border: solid #e5caaa 4px; */
     border-radius: 10px;
     padding-left: 15px;
     padding-right: 15px;
@@ -188,5 +185,71 @@
 
 .about {
     height: 1300px;
-    background-color: #1daec8;
+    background-color: #0f5e6c;
+}
+
+/* RESPONSIVE MEDIA styling */
+
+@media (max-width: 1154px) {
+    .navbar .logo a, .navbar .logo span{
+        font-size: 1.5rem;
+    }
+    .navbar .menu li a,
+    .navbar .menu i{
+    font-size: 1.3rem;
+    }
+    .home .max-width .home-content .text-2 { 
+        position: relative;
+        font-size: 6rem;
+    }
+    .home .max-width .home-content .text-3{
+        font-size: 3rem;
+    }
+    #nav-menu{
+        list-style-type: none;
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .navbar .logo a, .navbar .logo span{
+        font-size: 1.5rem;
+    }
+    .navbar .menu li a,
+    .navbar .menu i{
+    font-size: 1.3rem;
+    }
+    .home .max-width .home-content .text-2 { 
+        position: relative;
+        font-size: 4rem;
+    }
+    .home .max-width .home-content .text-3{
+        font-size: 2rem;
+    }
+    #nav-menu{
+        list-style-type: none;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 616px) {
+    .navbar .logo a, .navbar .logo span{
+        font-size: 1.2rem;
+    }
+    .navbar .menu li a,
+    .navbar .menu i{
+    font-size: 1.2rem;
+    }
+    .home .max-width .home-content .text-2 { 
+        position: relative;
+        font-size: 2.8rem;
+    }
+    .home .max-width .home-content .text-3{
+        font-size: 1.5rem;
+    }
+    #nav-menu{
+        list-style-type: none;
+        font-size: 1rem;
+    }
 }
