@@ -9,7 +9,7 @@
     box-sizing: border-box;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
-    /* border: solid rgb(212, 212, 212) 2px; */
+    /* border: solid red 1px; */
 }
 
 /* navigation bar styling */
@@ -88,6 +88,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    gap: 20px;
 }
 /* Hi, my name is */
 .home .max-width .home-content .text-1 {
@@ -97,7 +98,7 @@
 .home .max-width .home-content .text-2 { 
     position: relative;
     font-size: 8rem;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     letter-spacing: 0.5px;
     transition: transform 0.6s ease;
     background-image: linear-gradient(to right, #e5caaa, #1daec8,#e5caaa, #1daec8, #e5caaa);
@@ -128,9 +129,6 @@
     font-weight: 500;
     font-family: "Ubuntu";
     border-radius: 20px;
-    /* color: #1daec8; */
-    /* color: #e5caaa; */
-    padding-top: 10px;
     padding-bottom: 10px;
     transition: transform 0.6s ease, color 0.6s ease;
     background-image: linear-gradient(to right, #e5caaa, #1daec8,#e5caaa, #1daec8, #e5caaa);
@@ -156,18 +154,23 @@
     font-size: 40px;
     font-weight: 600;
     display: inline-block;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     opacity: 0;
     transition: opacity 0.6s ease;
+    z-index: 999;
+    margin-bottom: -69px;
 }
 
 #nav-menu li{
     text-align: center;
-    height: 60px;
+    /* height: 60px; */
     margin-bottom: 0px;
     display: inline;
 }
 
+#nav-menu:hover{
+    opacity: 1;
+}
 #nav-menu li a{
     color: #1daec8;
     font-weight: 500;
@@ -181,6 +184,95 @@
     color: #F0F8FF;
     background-color: #1daec8;
 }
+
+/* CLICK ME LINE */
+.click-me-line{
+    /* transform: translateY(-62px); */
+    position: relative;
+    text-align: center;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease;
+    animation: clickmepulse 2s ease infinite;
+    opacity: 1;
+    margin-bottom: 0px;
+    /* background-color: #1daec8; */
+    border-radius: 20px;
+    text-shadow: #1daec8 5px;
+}
+
+@keyframes clickmepulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        color: #1daec8;
+    }
+    100% {
+        transform: scale(1.0);
+    }
+    
+}
+
+.click-me-line::before{
+    content:"";
+    border-bottom: solid #e5caaa 1px;
+    width: 100px;
+    /* height: 100%; */
+    transform: translateY(-50%);
+    margin-right: 5px;
+}
+
+.click-me-line::after{
+    content:"";
+    border-bottom: solid #e5caaa 1px;
+    width: 100px;
+    /* height: 100%; */
+    transform: translateY(-50%);
+    margin-left:5px;
+}
+
+.click-me-line:hover{
+    opacity: 0;
+}
+
+/* quote styling */
+.small-quote{
+    margin-top: 6rem;
+}
+
+.quote{
+    font-size: 1.5rem;
+    font-style: italic;
+    transition: opacity 0.6s ease;
+}
+
+.quote, .quote-author{
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.quote:hover, .quote-author:hover{
+    opacity: 1;
+}
+#quote1, #quote2{
+    color:#1daec8;
+    font-size: 2rem;
+    transform: translateY(100%);
+}
+
+#quote1{
+    /* margin-right:20rem; */
+    transition: margin-right 0.3s ease;
+}
+
+#quote1:hover {
+    margin-right: 20rem;
+}
+
+
 
 /* about section styling */
 
@@ -210,10 +302,19 @@
         list-style-type: none;
         font-size: 1.5rem;
     }
+    .click-me-line {
+        font-size: 1.1rem;
+    }
+    .click-me-line::before, .click-me-line::after {
+        width: 50px;
+    }
+    #quote1, #quote2{
+        font-size: 1.5rem;
+    }
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
     .navbar .logo a, .navbar .logo span{
         font-size: 1.5rem;
     }
@@ -232,6 +333,30 @@
         list-style-type: none;
         font-size: 1.3rem;
     }
+    .click-me-line{
+        margin-top: 1.5rem;
+        font-size: 1rem;
+    }
+    .small-quote{
+        margin-top: 5rem;
+    }
+    
+    .quote{
+        font-size: 1.3rem;
+    }
+    .quote-author{
+        font-size: 0.8rem;
+    }
+    #quote1, #quote2{
+        font-size: 1.2rem;
+    }
+    #quote1{
+        /* margin-right:20rem; */
+        transition: margin-right 0.3s ease;
+    }
+    #quote1:hover {
+        margin-right: 10rem;
+    }
 }
 
 @media (max-width: 616px) {
@@ -244,13 +369,26 @@
     }
     .home .max-width .home-content .text-2 { 
         position: relative;
-        font-size: 2.8rem;
+        font-size: 2.2rem;
     }
     .home .max-width .home-content .text-3{
         font-size: 1.5rem;
     }
     #nav-menu{
         list-style-type: none;
+        font-size: 0.85rem;
+    }
+    .click-me-line{
+        margin-top: 1.6rem;
         font-size: 1rem;
+    }
+    .small-quote{
+        margin-top: 3rem;
+    }
+    .quote{
+        font-size: 1.1rem;
+    }
+    .quote-author{
+        font-size: 0.6rem;
     }
 }

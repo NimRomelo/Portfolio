@@ -4,6 +4,10 @@ const navMenuTrigger = document.getElementById("home-content")
 const homeName = document.getElementById("nimrod-romelo")
 const homeWebDev = document.getElementById("web-developer")
 const navMenu = document.getElementById("nav-menu")
+const quoteMark = document.getElementById("quote1")
+const quotePara = document.getElementsByClassName("quote")[0]
+const quoteAuthor = document.getElementsByClassName("quote-author")[0]
+const clickMeLine = document.getElementsByClassName("click-me-line")[0]
 
 
 //store original styles
@@ -18,12 +22,24 @@ const originalStyles = {
     },
     navMenu: {
         opacity: navMenu.style.opacity
+    },
+    quoteMark: {
+        margin: quoteMark.style.margin
+    },
+    quotePara: {
+        opacity: quotePara.style.opacity
+    },
+    quoteAuthor: {
+        opacity: quoteAuthor.style.opacity
+    },
+    clickMeLine: {
+        opacity: clickMeLine.style.opacity
     }
 };
 
 //what triggers the animation
 navMenuTrigger.addEventListener("mouseenter", showNavMenu)
-console.log(navMenuTrigger);
+// console.log(navMenuTrigger);
 
 navMenuTrigger.addEventListener("mouseleave", hideNavMenu)
 
@@ -33,6 +49,16 @@ function showNavMenu(){
     homeWebDev.style.transform = "translateY(60px)";
     homeWebDev.style.color = "#e5caaa";
     navMenu.style.opacity = "1";
+    quotePara.style.opacity = "1";
+    quoteAuthor.style.opacity = "1";
+    clickMeLine.style.opacity = "0";
+
+    if(window.innerWidth < 616) {
+        quoteMark.style.margin = "0 15rem 0 0";
+    } else {
+        quoteMark.style.margin = "0 20rem 0 0";
+    }
+    console.log(showNavMenu)
 }
 
 function hideNavMenu(){
@@ -44,4 +70,8 @@ function hideNavMenu(){
     homeWebDev.style.transform = originalStyles.homeWebDev.transform;
     homeWebDev.style.color = originalStyles.homeWebDev.color;
     navMenu.style.opacity = originalStyles.navMenu.opacity;
-}
+    quoteMark.style.margin = originalStyles.quoteMark.margin;
+    quotePara.style.opacity = originalStyles.quotePara.opacity;
+    quoteAuthor.style.opacity = originalStyles.quoteAuthor.opacity;
+    clickMeLine.style.opacity=originalStyles.clickMeLine.opacity;
+}   
