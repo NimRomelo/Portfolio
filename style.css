@@ -304,11 +304,10 @@ html, body {
 .about .title::after{
     content:"";
     width: 150px;
-    height: 2px;
     bottom: 0px;
     left: 50%;
     background-color: #e5caaa;
-    border-bottom: solid #e5caaa 5px;
+    border-bottom: solid #e5caaa 3px;
     position: absolute;
     transform: translateX(-50%);
     border-radius: 3px;
@@ -360,7 +359,10 @@ html, body {
 /* History styling======================================== */
 .history {
     height: 100vh;
-    background-color: rgba(40, 40, 40, 1);
+    /* background-color: rgba(40, 40, 40, 1); */
+    background: url("images/bg-sand.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 100px;
 }
 .history .title {
