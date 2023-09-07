@@ -12,16 +12,26 @@
     /* border: solid red 1px; */
 }
 
+html, body {
+    scroll-behavior: smooth;
+    font-family: "Poppins";
+}
+
 /* navigation bar styling */
 .navbar {
-    background-color: rgba(40, 40, 40, 0.3);
+    background-color: rgba(40, 40, 40, 0);
     width: 100%;
     position: fixed;
     font-family: "Poppins";
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 9999;
 }
 
+.navbar.sticky{
+    background-color: #151515;
+    /* opacity: 50%; */
 
+}
 .max-width{
     max-width: 100%;
     margin:0;
@@ -128,7 +138,7 @@
     padding-left: 0px;
     font-weight: 500;
     font-family: "Ubuntu";
-    border-radius: 20px;
+    /* border-radius: 20px; */
     padding-bottom: 10px;
     transition: transform 0.6s ease, color 0.6s ease;
     background-image: linear-gradient(to right, #e5caaa, #1daec8,#e5caaa, #1daec8, #e5caaa);
@@ -252,7 +262,7 @@
 
 .quote, .quote-author{
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.8s ease;
 }
 .quote:hover, .quote-author:hover{
     opacity: 1;
@@ -265,7 +275,7 @@
 
 #quote1{
     /* margin-right:20rem; */
-    transition: margin-right 0.3s ease;
+    transition: margin-right 0.4s ease;
 }
 
 #quote1:hover {
@@ -274,14 +284,131 @@
 
 
 
-/* about section styling */
-
+/* about section styling=============================================== */
 .about {
-    height: 1300px;
-    background-color: #0f5e6c;
+    height: 100vh;
+    background-color: #0a404a;
+    padding: 100px;
+}
+/* ABOUT ME*/
+.about .title {
+    text-align: center;
+    color: #e5caaa;
+    /* background-color: red; */
+    font-size: 2.5rem;
+    font-family: "Ubuntu";
+    position: relative;
+    margin-bottom: 5vh;
+    padding-bottom: 1rem;
+}
+.about .title::after{
+    content:"";
+    width: 150px;
+    height: 2px;
+    bottom: 0px;
+    left: 50%;
+    background-color: #e5caaa;
+    border-bottom: solid #e5caaa 5px;
+    position: absolute;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+.about .max-width {
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-/* RESPONSIVE MEDIA styling */
+.about .max-width .left{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.about .max-width .right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .max-width .left .about-image {
+    border-radius: 10%;
+    width: 500px;
+    filter: grayscale();
+    border: 10px #e5caaa solid;
+}
+
+.about .max-width .right p{
+    font-family: "Montserrat";
+    color:#e5caaa;
+    font-size: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.about .max-width .right i{
+    color:#e5caaa;
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+/* History styling======================================== */
+.history {
+    height: 100vh;
+    background-color: rgba(40, 40, 40, 1);
+    padding: 100px;
+}
+.history .title {
+    text-align: center;
+    color: #e5caaa;
+    /* background-color: red; */
+    font-size: 2.5rem;
+    font-family: "Ubuntu";
+    position: relative;
+    margin-bottom: 5vh;
+    padding-bottom: 1rem;
+}
+.history .title::after{
+    content:"";
+    width: 150px;
+    height: 2px;
+    bottom: 0px;
+    left: 50%;
+    background-color: #e5caaa;
+    border-bottom: solid #e5caaa 5px;
+    position: absolute;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+
+
+/* RESPONSIVE MEDIA styling============================ */
+@media (max-width:1500px){
+    .about .max-width .left{
+        flex: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .about .max-width .right{
+        flex: 100%;
+    }
+    .about .max-width .left .about-image {
+        width: 400px;
+    }
+    .about .max-width .right p{
+        display: flex;
+        justify-content: center;
+        text-align:center;
+    }
+    
+}
 
 @media (max-width: 1154px) {
     .navbar .logo a, .navbar .logo span{
@@ -311,7 +438,11 @@
     #quote1, #quote2{
         font-size: 1.5rem;
     }
+    .about .max-width .right p{
+        font-size: 1.3rem;
+    }
 }
+
 
 
 @media (max-width: 900px) {
@@ -357,7 +488,21 @@
     #quote1:hover {
         margin-right: 10rem;
     }
+    .about .max-width .right p{
+        font-size: 1.1rem;
+    }
 }
+
+@media (max-width: 748px) {
+    .about .max-width .right p{
+        font-size: 1rem;
+    }
+    .about .max-width .left .about-image {
+        width: 350px;
+        height: 350px;
+    }
+}
+
 
 @media (max-width: 616px) {
     .navbar .logo a, .navbar .logo span{
@@ -365,7 +510,7 @@
     }
     .navbar .menu li a,
     .navbar .menu i{
-    font-size: 1.2rem;
+    font-size: 1rem;
     }
     .home .max-width .home-content .text-2 { 
         position: relative;
@@ -390,5 +535,38 @@
     }
     .quote-author{
         font-size: 0.6rem;
+    }
+    .about .max-width .left .about-image {
+        width: 300px;
+        height: 300px;
+    }
+    .about .max-width .right p{
+        font-size: 0.9rem;
+        padding-top: 0px;
+    }
+    .about {
+    padding-left: 50px;
+    padding-right: 50px;
+    }
+    .about .max-width {
+        height: 80%;
+    }
+}
+
+@media (max-width: 466px) {
+    .about .max-width .left .about-image {
+        width: 250px;
+        height: 250px;
+    }
+    .about .max-width .right p{
+        font-size: 0.8rem;
+        align-items: flex-start;
+    }
+    .about {
+        padding-left: 40px;
+        padding-right: 40px;
+        }
+    .about .max-width {
+        height: 70%;
     }
 }

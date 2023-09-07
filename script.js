@@ -1,5 +1,20 @@
-// script for showing nav button in home section
+// trigger sticky navbar====================================
+window.addEventListener("scroll", stickyNav)
 
+function stickyNav() {
+    let navBar = document.getElementsByClassName("navbar")[0]
+    if (window.scrollY > 30) {
+        navBar.classList.add("sticky");
+    } else {
+        navBar.classList.remove("sticky");
+    }
+
+}
+
+
+//home animation start====================================
+
+//variable declarations
 const navMenuTrigger = document.getElementById("home-content")
 const homeName = document.getElementById("nimrod-romelo")
 const homeWebDev = document.getElementById("web-developer")
@@ -9,6 +24,9 @@ const quotePara = document.getElementsByClassName("quote")[0]
 const quoteAuthor = document.getElementsByClassName("quote-author")[0]
 const clickMeLine = document.getElementsByClassName("click-me-line")[0]
 
+//what triggers the animation
+navMenuTrigger.addEventListener("mouseenter", showNavMenu);
+navMenuTrigger.addEventListener("mouseleave", hideNavMenu);
 
 //store original styles
 const originalStyles = {
@@ -37,11 +55,7 @@ const originalStyles = {
     }
 };
 
-//what triggers the animation
-navMenuTrigger.addEventListener("mouseenter", showNavMenu)
-// console.log(navMenuTrigger);
-
-navMenuTrigger.addEventListener("mouseleave", hideNavMenu)
+//functions
 
 function showNavMenu(){
     homeName.style.transform = "translateY(-60px)";
@@ -75,3 +89,6 @@ function hideNavMenu(){
     quoteAuthor.style.opacity = originalStyles.quoteAuthor.opacity;
     clickMeLine.style.opacity=originalStyles.clickMeLine.opacity;
 }   
+// home animation end======================================
+
+
