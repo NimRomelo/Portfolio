@@ -456,7 +456,7 @@ html, body {
 }
 .history .work-history .work-container{
     color: #F0F8FF;
-    height: 150px;
+    height: 100%;
     border: 1px solid #1daec8;
     border-radius: 20px;
     display: flex;
@@ -469,20 +469,15 @@ html, body {
 
 .history .work-history .work-company {
     display: flex;
+    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: space-around;
-    color: #e5caaa;
     gap: 20px;
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-    /* border: 1px solid #1daec8; */
-    /* border-radius: 20px;
-    height: 250px; */
     color: #e5caaa;
     height: 100%;
     border: 1px solid #1daec8;
     border-radius: 20px;
-    display: flex;
-    flex-direction: row;
     align-items: center;
     box-shadow: 0 0 10px rgba(29, 174, 200, 0);
     transition: all 0.3s ease;
@@ -510,6 +505,7 @@ html, body {
     flex-direction: column;
     justify-content: space-around;
     gap: 0.8rem;
+    min-width: 325px;
 }
 .job-title{
     color:#1daec8;
@@ -623,18 +619,26 @@ html, body {
         margin-right: 10rem;
     }
     .about .max-width .right p{
-        font-size: 1.1rem;
+        font-size: 1.6rem;
     }
 }
 
 @media (max-width: 748px) {
     .about .max-width .right p{
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
     .about .max-width .left .about-image {
         width: 350px;
         height: 350px;
     }
+    .history .work-history .work-company{
+        flex-wrap: wrap;
+    }
+    .history {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
 }
 
 
@@ -675,8 +679,8 @@ html, body {
         height: 300px;
     }
     .about .max-width .right p{
-        font-size: 0.9rem;
-        padding-top: 0px;
+        font-size: 1.2rem;
+        padding-top: 2rem;
     }
     .about {
     padding-left: 50px;
@@ -684,6 +688,16 @@ html, body {
     }
     .about .max-width {
         height: 80%;
+    }
+    .job-title{
+        color:#1daec8;
+        font-size: 1.4rem;
+    }
+    .job-duration{
+        font-size: 1.3rem;
+    }
+    .job-description{
+        font-size: 1rem;
     }
 }
 
@@ -693,7 +707,7 @@ html, body {
         height: 250px;
     }
     .about .max-width .right p{
-        font-size: 0.8rem;
+        font-size: 1rem;
         align-items: flex-start;
     }
     .about {
@@ -702,5 +716,21 @@ html, body {
         }
     .about .max-width {
         height: 70%;
+    }
+    .job-title{
+        color:#1daec8;
+        font-size: 1.3rem;
+    }
+    .job-duration{
+        font-size: 1.1rem;
+    }
+    .job-description{
+        font-size: 0.9rem;
+    }
+    .history .work-history .work-company{
+        width: 100%;
+    }
+    .job{
+        min-width: 230px;
     }
 }
