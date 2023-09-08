@@ -92,3 +92,5 @@ function hideNavMenu(){
 // home animation end======================================
 
 
+
+// History animation start
