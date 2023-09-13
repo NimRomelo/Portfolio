@@ -92,5 +92,5 @@ function hideNavMenu(){
 // home animation end======================================
 
 
+// swiper js
 
-// History animation start
